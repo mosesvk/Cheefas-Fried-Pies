@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Header /> 
       <main>
-        <h1>Cheefas Fried Pies</h1>
+        <h1>Cheefa's Fried Pies</h1>
       </main>
       <Footer />
     </>
