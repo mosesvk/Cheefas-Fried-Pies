@@ -1,3 +1,4 @@
+import { LinkContainer as Link } from 'react-router-bootstrap';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const Header = () => {
@@ -5,16 +6,22 @@ const Header = () => {
     <header>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href='/'>Cheefas Fried Pies</Navbar.Brand>
+          <Link to='/'>
+            <Navbar.Brand>Cheefas Fried Pies</Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link href='/cart'>
-                <i className='fas fa-shopping-cart'></i>Cart
-              </Nav.Link>
-              <Nav.Link href='/login'>
-                <i className='fas fa-user'></i>Sign in
-              </Nav.Link>
+              <Link to='/cart'>
+                <Nav.Link>
+                  <i className='fas fa-shopping-cart'></i>Cart
+                </Nav.Link>
+              </Link>
+              <Link to='/login'>
+                <Nav.Link>
+                  <i className='fas fa-user'></i>Sign in
+                </Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
