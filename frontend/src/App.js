@@ -9,11 +9,10 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className='py-3  '>
         <Container>
-          
+          <h1>Cheefa's Fried Pies</h1> 
         </Container>
-        <h1>Cheefa's Fried Pies</h1>
       </main>
       <Footer />
     </>
