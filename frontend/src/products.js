@@ -7,7 +7,7 @@ const products = [
       'Beef and Mushroom',
     category: 'savory',
     price: 7.50,
-    countInStock: 10,
+    countInStock: 0,
     rating: 4.5,
     numReviews: 12,
   },
