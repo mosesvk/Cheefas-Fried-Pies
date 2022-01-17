@@ -14,7 +14,7 @@ const products = [
   {
     _id: '2',
     name: 'Nutella',
-    image: '/images/nutella.jpg',
+    image: '/images/nutella.jpeg',
     description:
       'Creamy Nutella',
     category: 'sweet',
@@ -38,7 +38,7 @@ const products = [
   {
     _id: '4',
     name: 'Pizza Puff Peporoni',
-    image: '/images/pizza.jpg',
+    image: '/images/pizza.jpeg',
     description:
       'New Pizza Puff',
     category: 'pizza',
@@ -50,7 +50,7 @@ const products = [
   {
     _id: '5',
     name: 'Pineapple',
-    image: '/images/mouse.jpg',
+    image: '/images/pineapple.jpeg',
     description:
       'Fresh Pineapple',
     category: 'sweet',
@@ -62,7 +62,7 @@ const products = [
   {
     _id: '6',
     name: 'Coconut',
-    image: '/images/alexa.jpg',
+    image: '/images/coconut.jpeg',
     description:
       'Fresh coconut',
     category: 'sweet',
