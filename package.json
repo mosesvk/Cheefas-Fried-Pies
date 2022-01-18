@@ -1,0 +1,22 @@
+{
+  "name": "cfp-server",
+  "version": "1.0.0",
+  "description": "ecommerce cheefas fried pies",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosesvk/cheefas-fried-pies.git"
+  },
+  "author": "Moses Kaumatule",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mosesvk/cheefas-fried-pies/issues"
+  },
+  "homepage": "https://github.com/mosesvk/cheefas-fried-pies#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
