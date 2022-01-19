@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'the Cowboy',
     image: '/images/cowboy.jpeg',
     description:
@@ -12,7 +11,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Nutella',
     image: '/images/nutella.jpeg',
     description:
@@ -24,7 +22,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'Caramel Apple',
     image: '/images/caramel-apple.jpeg',
     description:
@@ -36,7 +33,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Pizza Puff Peporoni',
     image: '/images/pizza.jpeg',
     description:
@@ -48,7 +44,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Pineapple',
     image: '/images/pineapple.jpeg',
     description:
@@ -60,7 +55,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'Coconut',
     image: '/images/coconut.jpeg',
     description:
