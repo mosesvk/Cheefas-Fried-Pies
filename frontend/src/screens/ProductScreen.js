@@ -11,7 +11,6 @@ import {
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductDetails } from '../store/actions/productActions';
-
 import Rating from '../components/Rating';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
@@ -19,14 +18,13 @@ import Message from '../components/Message';
 const ProductScreen = () => {
   const dispatch = useDispatch();
 
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
-
   const { id } = useParams();
-  console.log(id);
+
+  const productDetails = useSelector(state => state.productDetails)
+  const {error, loading, product} = productDetails
 
   useEffect(() => {
-    dispatch(listProductDetails(id));
+    dispatch(listProductDetails(id))
   }, [dispatch, id]);
 
   return (
