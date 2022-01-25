@@ -1,73 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {
-  Form,
-  Button,
-  Row,
-  Col,
-  FormGroup,
-  FormControl,
-  FormLabel,
-} from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Form, Button, Row, Col } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import FormContainer from '../components/FormContainer'
+import { login } from '../store/actions/userActions'
 
-import Message from '../components/Message';
-import Loader from '../components/Loader';
-import FormContainer from '../components/FormContainer';
+const LoginScreen = ({ location, history }) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-import { login } from '../store/actions/userActions';
-
-const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const location = useLocation()
+  const dispatch = useDispatch()
 
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
-  
-  const redirect = location.search ? location.search.split('=')[1] : '/';
+
+  const redirect = location.search ? location.search.split('=')[1] : '/'
 
   useEffect(() => {
     if (userInfo) {
-      navigate(redirect)
+      history.push(redirect)
     }
-  }, [navigate, userInfo, redirect])
+  }, [history, userInfo, redirect])
 
   const submitHandler = (e) => {
-    e.prevent.default();
-    //DISPATCH LOGIN
+    e.preventDefault()
     dispatch(login(email, password))
-    console.log('hit')
-  };
+  }
 
   return (
     <FormContainer>
-      <h1>Sign in</h1>
+      <h1>Sign In</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-        <FormGroup controlId='email'>
-          <FormLabel>Email Address</FormLabel>
-          <FormControl
+        <Form.Group controlId='email'>
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control
             type='email'
             placeholder='Enter email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          ></FormControl>
-        </FormGroup>
+          ></Form.Control>
+        </Form.Group>
 
-        <FormGroup controlId='password' className='py-3'>
-          <FormLabel>Password</FormLabel>
-          <FormControl
+        <Form.Group controlId='password'>
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             type='password'
             placeholder='Enter password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></FormControl>
-        </FormGroup>
+          ></Form.Control>
+        </Form.Group>
 
         <Button type='submit' variant='primary'>
           Sign In
@@ -83,7 +69,7 @@ const LoginScreen = () => {
         </Col>
       </Row>
     </FormContainer>
-  );
-};
+  )
+}
 
-export default LoginScreen;
+export default LoginScreen
