@@ -25,9 +25,9 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
   const location = useLocation()
 
-  const userLogin = useSelector(state => state.userLogin)
-  const {loading, error, userInfo} = userLogin
-
+  const userLogin = useSelector((state) => state.userLogin)
+  const { loading, error, userInfo } = userLogin
+  
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
   useEffect(() => {
