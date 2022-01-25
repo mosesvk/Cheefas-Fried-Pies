@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import PaymentScreen from './screens/PaymentScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -14,6 +15,7 @@ import ShippingScreen from './screens/ShippingScreen';
 export default (
   <Routes>
     <Route path='/shipping' element={<ShippingScreen />} />
+    <Route path='/payment' element={<PaymentScreen />} />
     <Route path='/login' element={<LoginScreen />} />
     <Route path='/register' element={<RegisterScreen />} />
     <Route path='/profile' element={<ProfileScreen />} />
