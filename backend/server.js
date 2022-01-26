@@ -29,7 +29,7 @@ app.use('/api/orders', orderRoutes)
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5555;
+const PORT = process.env.PORT || 5500;
 
 app.listen(
   PORT,
