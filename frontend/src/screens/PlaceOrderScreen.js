@@ -22,6 +22,7 @@ const PlaceOrderScreen = () => {
 
   const cart = useSelector((state) => state.cart);
 
+  //Calculate Prices
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
   };
@@ -41,7 +42,7 @@ const PlaceOrderScreen = () => {
 
   useEffect(() => {
     if (success) {
-      navigate(`/order/${order._id}`)
+      navigate(`/orders/${order._id}`)
     }
     // eslint-disable-next-line
   }, [navigate, success])
