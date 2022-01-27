@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Button,
@@ -17,8 +17,6 @@ import { createOrder } from '../store/actions/orderActions';
 const PlaceOrderScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");  
 
   const cart = useSelector((state) => state.cart);
 
