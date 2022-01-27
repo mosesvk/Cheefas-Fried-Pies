@@ -131,13 +131,14 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`api/users/${id}`, config);
-
+    const { data } = await axios.get(`/api/users/${id}`, config);
+    console.log(data)
     dispatch({
       type: USER_DETAILS_SUCCESS,
       payload: data,
     });
   } catch (error) {
+    console.log(error)
     dispatch({
       type: USER_DETAILS_FAIL,
       payload:
@@ -267,6 +268,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
     });
 
     const {
+      userDetails: { user },
       userLogin: { userInfo },
     } = getState();
 
@@ -277,7 +279,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(`/api/users/${user._id}`, user, config)
+    const { data } = await axios.put(`/api/users/${user._id}`, user, config);
 
     dispatch({ type: USER_UPDATE_SUCCESS });
 
@@ -285,6 +287,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
 
     dispatch({ type: USER_DETAILS_RESET });
   } catch (error) {
+    console.log(error)
     const message =
       error.response && error.response.data.message
         ? error.response.data.message

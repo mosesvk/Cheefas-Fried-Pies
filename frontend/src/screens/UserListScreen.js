@@ -9,9 +9,12 @@ import { listUsers, deleteUser } from '../store/actions/userActions';
 
 const UserListScreen = () => {
   const [showModal, setShowModal] = useState(false);
+  const [deleteId, setDeleteId] = useState('')
 
   const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+  const handleShow = async (id) => {
+    setShowModal(true)
+  };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,36 +37,21 @@ const UserListScreen = () => {
   }, [dispatch, navigate, successDelete, userInfo]);
 
   const deleteHandler = (id) => {
-    dispatch(deleteUser(id));
-    handleClose();
+    handleShow(id)
+    setDeleteId(id)
+    // dispatch(deleteUser(id));
   };
+
+  const deleteConfirmHandler = () => {
+    dispatch(deleteUser(deleteId))
+    handleClose()
+  }
 
   return (
     <>
       <h1>Users</h1>
       {loading && <Loader />}
       {error && <Message variant='danger'>{error}</Message>}
-      {showModal && (
-        <Modal
-          show={showModal}
-          onHide={handleClose}
-          aria-labelledby='contained-modal-title-vcenter'
-          centered
-        >
-          <Modal.Header>
-            <Modal.Title>Confirm Deletion</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Are you sure you want to Delete User?</Modal.Body>
-          <Modal.Footer>
-            <Button variant='secondary' onClick={handleClose}>
-              Cancel
-            </Button>
-            <Button variant='danger' onClick={deleteHandler}>
-              Confirm Delete
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      )}
       {!loading && !error && (
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
@@ -99,7 +87,7 @@ const UserListScreen = () => {
                   <Button
                     variant='danger'
                     className='btn-sm'
-                    onClick={handleShow}
+                    onClick={() => deleteHandler(user._id)}
                   >
                     <i className='fas fa-trash'></i>
                   </Button>
@@ -109,6 +97,25 @@ const UserListScreen = () => {
           </tbody>
         </Table>
       )}
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        aria-labelledby='contained-modal-title-vcenter'
+        centered
+      >
+        <Modal.Header>
+          <Modal.Title>Confirm Deletion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to Delete User?</Modal.Body>
+        <Modal.Footer>
+          <Button variant='secondary' onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant='danger' onClick={deleteConfirmHandler}>
+            Confirm Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
