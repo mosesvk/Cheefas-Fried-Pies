@@ -12,7 +12,7 @@ import {
   userRegisterReducer,
   userUpdateProfileReducer,
 } from './reducers/userReducers';
-import { orderCreateReducer, orderDetailsReducer, orderPayReducer } from './reducers/orderReducers';
+import { orderCreateReducer, orderDetailsReducer, orderMyListReducer, orderPayReducer } from './reducers/orderReducers';
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -24,7 +24,8 @@ const reducer = combineReducers({
   userUpdateProfile: userUpdateProfileReducer,
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailsReducer, 
-  orderPay: orderPayReducer
+  orderPay: orderPayReducer,
+  orderMyList: orderMyListReducer
 });
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
