@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import {useNavigate, useParams} from 'react-router-dom'
-import { Table, Button, Row, Col } from 'react-bootstrap'
+import { Table, Button, Row, Col, Modal } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -14,6 +14,14 @@ import {
 import { PRODUCT_CREATE_RESET } from '../store/constants/productConstants'
 
 const ProductListScreen = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [deleteId, setDeleteId] = useState('')
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = async (id) => {
+    setShowModal(true)
+  };
+
   const navigate = useNavigate();
   const params = useParams();
   const {id} = params
@@ -66,14 +74,19 @@ const ProductListScreen = () => {
   ])
 
   const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
-      // dispatch(deleteProduct(id))
-      console.log(id)
-    }
+    handleShow(id)
+    setDeleteId(id)
+      
+  }
+
+  const deleteConfirmHandler = () => {
+    dispatch(deleteProduct(deleteId))
+    handleClose()
   }
 
   const createProductHandler = () => {
     dispatch(createProduct())
+    handleClose()
   }
 
   return (
@@ -138,7 +151,27 @@ const ProductListScreen = () => {
           {/* <Paginate pages={pages} page={page} isAdmin={true} /> */}
         </>
       )}
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        aria-labelledby='contained-modal-title-vcenter'
+        centered
+      >
+        <Modal.Header>
+          <Modal.Title>Confirm Deletion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to Delete User?</Modal.Body>
+        <Modal.Footer>
+          <Button variant='secondary' onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant='danger' onClick={deleteConfirmHandler}>
+            Confirm Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
+
   )
 }
 
