@@ -23,7 +23,7 @@ const ProfileScreen = () => {
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
-
+  
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -46,6 +46,7 @@ const ProfileScreen = () => {
       } else {
         setName(user.name);
         setEmail(user.email);
+        console.log(userDetails)
       }
     }
   }, [dispatch, navigate, userInfo, user, success]);
