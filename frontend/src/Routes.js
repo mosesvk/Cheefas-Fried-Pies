@@ -7,6 +7,7 @@ import LoginScreen from './screens/LoginScreen';
 import OrderScreen from './screens/OrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import ProductListScreen from './screens/ProductList';
 import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -31,6 +32,7 @@ export default (
     </Route>
     <Route path='/admin/userlist' element={<UserListScreen />} />
     <Route path='/admin/users/:id/edit' element={<UserEditScreen />} />
+    <Route path='/admin/productlist' element={<ProductListScreen />} />
     <Route exact path='/' element={<HomeScreen />} />
   </Routes>
 )
