@@ -11,6 +11,7 @@ import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import UserListScreen from './screens/UserListScreen';
 
 
 
@@ -27,6 +28,7 @@ export default (
     <Route path='cart' element={<CartScreen />} >
       <Route path=':id' element={<CartScreen />} />
     </Route>
+    <Route path='/admin/userlist' element={<UserListScreen />} />
     <Route exact path='/' element={<HomeScreen />} />
   </Routes>
 )
