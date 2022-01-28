@@ -33,10 +33,6 @@ h3 {
   height: 275px;
 }
 
-
-
-
-
 // Variables
 
 $web-font-path: "https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" !default;
@@ -101,13 +97,22 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;70
 /* Carousel */
 .carousel {
   background-color: $black;
-}
 
-.carousel-item {
-  background-size: cover;
-  height: 50vh!important;
-  background-position: center!important;
-  opacity: 0.75!important;
+  .carousel-item {
+    background-size: cover;
+    height: 50vh!important;
+    background-position: center!important;
+    opacity: 0.75!important;
+  }
+  #sweetCar {
+    background: url('../images/CFP-cover_ppqevBw.jpg');
+  }
+  #pizzaCar {
+    background: url('../images/bakery.jpeg');
+  }
+  #contactCar {
+    background: url('../images/contact.jpeg');
+  }
 }
 
 .carousel-item-next,

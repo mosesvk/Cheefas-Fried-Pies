@@ -8,23 +8,28 @@ import { Carousel, Image } from 'react-bootstrap';
 // import { listTopProducts } from '../store/actions/productActions';
 
 const ProductCarousel = () => {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
   return (
     <Carousel
       pause='hover'
-      fade
-      activeIndex={index}
-      onSelect={handleSelect}
     >
-      <Carousel.Item>
+      <Carousel.Item id='sweetCar'>
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h2>Sweet Fried Pies</h2>
         </Carousel.Caption>
       </Carousel.Item>
+
+      <Carousel.Item id='pizzaCar'>
+        <Carousel.Caption>
+          <h2>New Pizza Puffs</h2>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item id='contactCar'>
+        <Carousel.Caption>
+          <h2>Contact Us</h2>
+        </Carousel.Caption>
+      </Carousel.Item>
+
     </Carousel>
   );
 };
