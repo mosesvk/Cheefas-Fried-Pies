@@ -1,6 +1,5 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
-
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
@@ -34,9 +33,16 @@ export default (
     </Route>
     <Route path='/admin/userlist' element={<UserListScreen />} />
     <Route path='/admin/users/:id/edit' element={<UserEditScreen />} />
-    <Route path='/admin/productlist' element={<ProductListScreen />} />
+    <Route path='/admin/productlist' element={<ProductListScreen />} exact >
+      <Route path=':pageNumber' element={<ProductListScreen />} exact />
+    </Route>
+    
     <Route path='/admin/product/:id/edit' element={<ProductEditScreen />} />
     <Route path='/admin/orderlist' element={<OrderListScreen />} />
-    <Route exact path='/' element={<HomeScreen />} />
+    <Route path='/' element={<HomeScreen />} exact >
+      <Route path='search/:keyword' element={<HomeScreen />} exact />
+      <Route path='page/:pageNumber' element={<HomeScreen />} exact />
+      <Route path='search/:keyword/page/:pageNumber' element={<HomeScreen />} exact />
+    </Route>
   </Routes>
 )

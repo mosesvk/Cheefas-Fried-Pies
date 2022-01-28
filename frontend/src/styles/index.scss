@@ -1,8 +1,13 @@
 @import './variables';
-
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
 main {
   min-height: 80vh;
+}
+
+#brand, .fugaz {
+  font-family: 'Fugaz One', cursive;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -11,6 +16,7 @@ h1 {
 }
 
 h2 {
+  font-family: 'Fugaz One', cursive;
   font-size: 1.4rem;
   padding: 0.5rem 0;
 }
