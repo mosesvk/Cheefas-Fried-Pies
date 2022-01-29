@@ -99,7 +99,7 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;70
   background-color: $black;
 
   .carousel-item {
-    background-size: cover;
+    background-size: cover!important;
     height: 50vh!important;
     background-position: center!important;
     opacity: 0.75!important;

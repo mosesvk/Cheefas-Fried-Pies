@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../store/actions/productActions';
@@ -7,6 +7,7 @@ import Paginate from '../components/Paginate';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Product from '../components/Product';
+import Meta from '../components/Meta';
 import ProductCarousel from '../components/ProductCarousel';
 
 const HomeScreen = () => {
@@ -24,7 +25,9 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Meta />
       {!keyword && <ProductCarousel />}
+      {keyword && <Link to='/' className='btn btn-light'>Go back</Link>}
       <h1 className='fugaz'>Products</h1>
       {loading && !error && <Loader />}
       {!loading && error && <Message variant='danger'>{error}</Message>}

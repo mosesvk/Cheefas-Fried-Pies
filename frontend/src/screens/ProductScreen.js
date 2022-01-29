@@ -71,7 +71,7 @@ const ProductScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Meta title={product.name} />
+          <Meta title={`CFP | ${product.name}`} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
