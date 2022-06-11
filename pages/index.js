@@ -2,12 +2,15 @@ const Home = ({ products, bannerData }) => {
   return (
     <>
       HeroBanner
-      
-      <div>
+
+      <div class='products-heading'>
         <h2>Cheefa's Fried Pies</h2>
         <p>the Best Fried Pies in Town</p>
       </div>
-      <div>{['Product 1', 'Product 2'].map((product) => product)}</div>
+
+      <div class='products-container'>
+        {['Product 1', 'Product 2'].map((product) => product)}
+      </div>
 
       Footer
     </>
