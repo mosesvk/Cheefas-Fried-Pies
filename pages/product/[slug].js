@@ -88,9 +88,12 @@ export const getStaticPaths = async () => {
     }
   }
   `;
+  // We are returning only the current slug product properties 
 
   const products = await client.fetch(query);
 
+  // We are instantly returning an object with this function
+    // That's why we have a () outside of the {}
   const paths = products.map((product) => ({
     params: { 
       slug: product.slug.current
