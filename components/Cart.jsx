@@ -5,7 +5,7 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
 
 import { useStateContext } from '../context/StateContext';
-// import { urlFor } from '../lib/client';
+import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
 const Cart = () => {
@@ -63,7 +63,7 @@ const Cart = () => {
         <div className="product-container">
           {cartItems.length >= 1 && cartItems.map((item) => (
             <div className="product" key={item._id}>
-              {/* <img src={urlFor(item?.image[0])} className="cart-product-image" /> */}
+              <img src={urlFor(item?.image[0])} className="cart-product-image" />
               <div className="item-desc">
                 <div className="flex top">
                   <h5>{item.name}</h5>
