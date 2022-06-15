@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body, * {
   padding: 0;
@@ -113,8 +118,9 @@ width: 100%;
   transform: scale(1.1,1.1)
 }
 .product-image{
+  height: 250px;
   border-radius: 15px;
- background-color: #ebebeb;
+  background-color: #ebebeb;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
 }

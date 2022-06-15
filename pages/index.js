@@ -10,7 +10,7 @@ const Home = ({ products, bannerData }) => (
       <p>speaker There are many variations passages</p>
     </div>
 
-    <div class="products-container">
+    <div class="flex flex-wrap justify-center gap-4 mt-4 w-full">
       {products?.map((product) => <Product key={product._id} product={product} />)}
     </div>
 
