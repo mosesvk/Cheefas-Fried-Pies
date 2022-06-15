@@ -8,6 +8,7 @@ import { runFireworks } from '../lib/utils';
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
   
+  // We want to clear all of the states once everything is purchased
   useEffect(() => {
     localStorage.clear();
     setCartItems([]);
@@ -40,4 +41,4 @@ const Success = () => {
   )
 }
 
-export default Success
+export default Success 
