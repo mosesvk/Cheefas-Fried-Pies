@@ -6,8 +6,8 @@ const Home = ({ products, bannerData }) => (
   <>
     <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
     <div class="products-heading">
-      <h2>Best Seller Products</h2>
-      <p>speaker There are many variations passages</p>
+      <h2>This Week's Flavors</h2>
+      <p>Check out our flavors for the week</p>
     </div>
 
     <div class="flex flex-wrap justify-center gap-4 mt-4 w-full">
